@@ -1,6 +1,6 @@
 {
   "name": "any-format",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "用于格式化展示的工具库",
   "main": "index.js",
   "type": "module",
