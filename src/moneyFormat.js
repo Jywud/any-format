@@ -1,4 +1,5 @@
-export default function moneyFormat(s, dot = ",") {
+/* 金额格式化 */
+export function moneyFormat(s, dot = ",") {
   if (typeof s === "string" && s.indexOf("E") > -1) {
     s = ((s.split("E")[0] - 0) * Math.pow(10, s.split("E")[1] - 0)).toString();
   }

@@ -1,4 +1,5 @@
-export default function numberFormat(str, dot = ",") {
+/* 数字格式化 */
+export function numberFormat(str, dot = ",") {
   if (str === 0) return 0;
   if (!str) return "-";
   if (str < 0) str = Math.abs(str);

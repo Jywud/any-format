@@ -1,9 +1,5 @@
-import moneyFormat from './src/moneyFormat.js'
-import numberFormat from './src/numberFormat.js'
-import phoneFormat from './src/phoneFormat.js'
-
-export {
-    moneyFormat,
-    numberFormat,
-    phoneFormat
-}
+export * from "./src/moneyFormat.js";
+export * from "./src/numberFormat.js";
+export * from "./src/phoneFormat.js";
+export * from "./src/identityFormat.js";
+export * from "./src/dateFormat.js";
