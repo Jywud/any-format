@@ -1,5 +1,6 @@
 ### any-format介绍
 用于格式化展示的工具库
+##持续更新中！！！（Continuously update code！！！）
 
 ### 安装
 
@@ -37,6 +38,13 @@ numberFormat(10000, 'a') //10a000
 import { phoneFormat } from 'any-format'
 
 phoneFormat('17611112222') //176****2222
+```
+
+##### 邮箱格式化
+```javascript
+import { emailFormat } from 'any-format'
+
+emailFormat('1234abcdefg@163.com') //123****@163.com
 ```
 
 ##### 身份证号码格式化
