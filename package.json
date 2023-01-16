@@ -1,6 +1,6 @@
 {
   "name": "any-format",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "用于数据格式化的工具库",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "npx rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,8 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.3.0",
+    "@types/jest": "^29.2.5",
+    "jest": "^29.3.1",
     "rollup": "^3.10.0"
   }
 }
