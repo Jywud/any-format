@@ -2,10 +2,16 @@
   "name": "any-format",
   "version": "0.2.2",
   "description": "用于数据格式化的工具库",
-  "main": "index.js",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.ems.js",
   "type": "module",
-  "keywords": ["format", "any-format", "格式化"],
+  "keywords": [
+    "format",
+    "any-format",
+    "格式化"
+  ],
   "scripts": {
+    "build": "npx rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/Jywud/any-format/issues"
   },
-  "homepage": "https://github.com/Jywud/any-format#readme"
+  "homepage": "https://github.com/Jywud/any-format#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.3.0",
+    "rollup": "^3.10.0"
+  }
 }
