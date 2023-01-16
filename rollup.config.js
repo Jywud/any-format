@@ -16,7 +16,7 @@ export default {
     {
       file: "dist/bundle.min.js",
       format: "iife",
-      name: "version",
+      name: "anyFormat",
     },
   ],
   external: [],
