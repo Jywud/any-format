@@ -5,6 +5,7 @@ import {
   phoneFormat,
   identityFormat,
   emailFormat,
+  nameFormat
 } from "../src/index.js";
 
 describe("测试", () => {
@@ -30,5 +31,10 @@ describe("测试", () => {
 
   it("测试emailFormat", () => {
     expect(emailFormat("1234abcdefg@163.com")).toBe("123****@163.com");
+  });
+
+  it("测试nameFormat", () => {
+    expect(nameFormat("王丫丫", 1)).toBe("王**");
+    expect(nameFormat("王丫丫", 2, 1)).toBe("*丫丫");
   });
 });

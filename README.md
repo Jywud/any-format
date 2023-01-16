@@ -16,6 +16,7 @@ npm install any-format --save
 ### 使用例子
 ```javascript
 import { moneyFormat } from 'any-format'
+//or  const { moneyFormat } = require('any-format')
 
 moneyFormat(12000) //12,000.00
 ```
@@ -67,4 +68,17 @@ import { dateFormat } from 'any-format'
 dateFormat(new Date) //2023-01-03
 dateFormat(new Date, 'yyyy/MM/dd') //2023/01/03
 dateFormat(new Date, 'yyyy-MM-dd hh:mm:ss') //2023-01-03 12:12:12
+```
+
+##### 姓名格式化
+```javascript
+
+// 第一位：姓名， 第二位：明文展示的位数，其他变为*（默认为1）， 第三位：是否倒序隐藏（0：正序，1：倒序，默认为0）
+import { nameFormat } from 'any-format'
+
+nameFormat('王亚亚') //王**
+nameFormat('王亚亚'， 1) //王**
+nameFormat('王亚亚'， 2) //王亚*
+nameFormat('王亚亚'， 1， 1) //**亚
+nameFormat('王亚亚'， 2， 1) //*亚亚
 ```
