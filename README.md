@@ -3,6 +3,10 @@
 
 ## 持续更新中！！！（Continuously update code！！！）
 
+### 代码贡献规范
+
+请查看README_dev.md文件
+
 ### 安装
 
 ```javascript
