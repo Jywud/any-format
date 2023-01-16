@@ -3,7 +3,7 @@ import babel from '@rollup/plugin-babel';
 import terser from "@rollup/plugin-terser"; // 不用解构出来 有默认导出
 
 export default {
-  input: "index.js",
+  input: "src/index.js",
   output: [
     {
       file: "dist/bundle.cjs.js",
