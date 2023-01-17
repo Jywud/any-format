@@ -82,3 +82,13 @@ nameFormat('王亚亚'， 2) //王亚*
 nameFormat('王亚亚'， 1， 1) //**亚
 nameFormat('王亚亚'， 2， 1) //*亚亚
 ```
+#### 驼峰格式化
+
+```javascript
+// 第一位：非驼峰字符串 第二位：非驼峰字符串间隔符
+import { toCamelFormat } from 'any-format'
+
+toCamelFormat("A_B_C") //ABC
+toCamelFormat("a_b_c") //aBC
+toCamelFormat("a-b-c","-") //aBC
+```
