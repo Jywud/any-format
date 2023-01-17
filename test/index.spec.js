@@ -1,4 +1,13 @@
-import { dateFormat, moneyFormat, numberFormat, phoneFormat, identityFormat, emailFormat, nameFormat } from '../src/index.js';
+import {
+  dateFormat,
+  moneyFormat,
+  numberFormat,
+  phoneFormat,
+  identityFormat,
+  emailFormat,
+  nameFormat,
+  toCamelFormat
+} from '../src/index.js';
 
 describe('测试', () => {
   it('测试dateFormat', () => {
@@ -28,5 +37,11 @@ describe('测试', () => {
   it('测试nameFormat', () => {
     expect(nameFormat('王丫丫', 1)).toBe('王**');
     expect(nameFormat('王丫丫', 2, 1)).toBe('*丫丫');
+  });
+
+  it('测试toCamelFormat', () => {
+    expect(toCamelFormat('A_B_C')).toBe('ABC');
+    expect(toCamelFormat('a_b_c')).toBe('aBC');
+    expect(toCamelFormat('a隔b隔c', '隔')).toBe('aBC');
   });
 });
