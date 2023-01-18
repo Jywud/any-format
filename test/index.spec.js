@@ -6,7 +6,8 @@ import {
   identityFormat,
   emailFormat,
   nameFormat,
-  toCamelFormat
+  toCamelFormat,
+  stripFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -43,5 +44,12 @@ describe('测试', () => {
     expect(toCamelFormat('A_B_C')).toBe('ABC');
     expect(toCamelFormat('a_b_c')).toBe('aBC');
     expect(toCamelFormat('a隔b隔c', '隔')).toBe('aBC');
+  });
+
+  it('测试stripFormat', () => {
+    expect(stripFormat('  abc df ')).toBe('abcdf');
+    expect(stripFormat('  abc df ', 'trim')).toBe('abc df');
+    expect(stripFormat('  abc df ', 'head')).toBe('abc df ');
+    expect(stripFormat('  abc df ', 'tail')).toBe('  abc df');
   });
 });

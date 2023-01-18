@@ -91,7 +91,7 @@ nameFormat('王亚亚'， 1， 1) //**亚
 nameFormat('王亚亚'， 2， 1) //*亚亚
 ```
 
-#### 驼峰格式化
+#### 转驼峰格式化
 
 ```javascript
 // 第一位：非驼峰字符串 第二位：非驼峰字符串间隔符
@@ -100,6 +100,18 @@ import { toCamelFormat } from 'any-format';
 toCamelFormat('A_B_C'); //ABC
 toCamelFormat('a_b_c'); //aBC
 toCamelFormat('a-b-c', '-'); //aBC
+```
+
+#### 去空白字符格式化
+
+```javascript
+//第一位：字符串  第二位：默认不传或者传all去除所有，trim：去首尾空格，head：去头部空格，tail：去尾部空格
+import { stripFormat } from 'any-format';
+
+stripFormat('  abc df '); //'abcdf'
+stripFormat('  abc df ', 'trim'); //'abc df'
+stripFormat('  abc df ', 'head'); //'abc df '
+stripFormat('  abc df ', 'tail'); //'  abc df'
 ```
 
 ## 贡献者

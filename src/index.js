@@ -6,3 +6,4 @@ export * from './tools/dateFormat.js';
 export * from './tools/emailFormat.js';
 export * from './tools/nameFormat.js';
 export * from './tools/toCamelFormat.js';
+export * from './tools/stripFormat.js';
