@@ -17,10 +17,13 @@ npm install any-format --save
 ### 使用例子
 
 ```javascript
+// 局部导入
 import { moneyFormat } from 'any-format';
-//or  const { moneyFormat } = require('any-format')
-
 moneyFormat(12000); //12,000.00
+
+// 导入所有
+import * as anyFormat from 'any-format';
+anyFormat.moneyFormat(12000); //12,000.00
 ```
 
 ### 支持的函数
