@@ -117,6 +117,17 @@ stripFormat('  abc df ', 'head'); //'abc df '
 stripFormat('  abc df ', 'tail'); //'  abc df'
 ```
 
+#### 字符串截断格式化
+
+```javascript
+//第一位：字符串  第二位：截断的长度(默认为10)，第三位：截断后拼接的后缀(默认是...)
+import { truncateFormat } from 'any-format';
+
+truncateFormat('abcdefghigklmn', 6); //'abcdef...'
+truncateFormat('abcdefghigklmn', 100); //'abcdefghigklmn'
+truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
+```
+
 ## 贡献者
 
 <a href="https://github.com/Jywud/any-format/graphs/contributors">
