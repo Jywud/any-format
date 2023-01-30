@@ -130,6 +130,5 @@ truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
 
 ## 贡献者
 
-<a href="https://github.com/Jywud/any-format/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Jywud/any-format" />
-</a>
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
