@@ -144,7 +144,7 @@ truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
         <a href="https://github.com/deek-dark">
             <img src="https://avatars.githubusercontent.com/u/55222006?v=4" width="100;" alt="deek-dark"/>
             <br />
-            <sub><b>deek-dark</b></sub>
+            <sub><b>Deek-dark</b></sub>
         </a>
     </td></tr>
 </table>
