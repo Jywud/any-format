@@ -131,4 +131,21 @@ truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
 ## 贡献者
 
 <!-- readme: collaborators,contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Jywud">
+            <img src="https://avatars.githubusercontent.com/u/18544133?v=4" width="100;" alt="Jywud"/>
+            <br />
+            <sub><b>大鱼</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/deek-dark">
+            <img src="https://avatars.githubusercontent.com/u/55222006?v=4" width="100;" alt="deek-dark"/>
+            <br />
+            <sub><b>Deek-dark</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators,contributors -end -->
