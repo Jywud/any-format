@@ -2,7 +2,7 @@
 
 ##### 用于前端常见的数据格式化，如手机号，金额，身份证号码等等
 
-## 持续更新中！！！（Continuously update code！！！）
+#### 持续更新中！！！（Continuously update code！！！）
 
 ### 代码贡献规范
 
@@ -12,6 +12,10 @@
 
 ```javascript
 npm install any-format --save
+
+or
+
+yarn add any-format
 ```
 
 ### 使用例子
@@ -94,7 +98,7 @@ nameFormat('王亚亚'， 1， 1) //**亚
 nameFormat('王亚亚'， 2， 1) //*亚亚
 ```
 
-#### 转驼峰格式化
+##### 转驼峰格式化
 
 ```javascript
 // 第一位：非驼峰字符串 第二位：非驼峰字符串间隔符
@@ -105,7 +109,7 @@ toCamelFormat('a_b_c'); //aBC
 toCamelFormat('a-b-c', '-'); //aBC
 ```
 
-#### 去空白字符格式化
+##### 去空白字符格式化
 
 ```javascript
 //第一位：字符串  第二位：默认不传或者传all去除所有，trim：去首尾空格，head：去头部空格，tail：去尾部空格
@@ -117,7 +121,7 @@ stripFormat('  abc df ', 'head'); //'abc df '
 stripFormat('  abc df ', 'tail'); //'  abc df'
 ```
 
-#### 字符串截断格式化
+##### 字符串截断格式化
 
 ```javascript
 //第一位：字符串  第二位：截断的长度(默认为10)，第三位：截断后拼接的后缀(默认是...)
@@ -128,7 +132,7 @@ truncateFormat('abcdefghigklmn', 100); //'abcdefghigklmn'
 truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
 ```
 
-## 贡献者
+### 贡献者
 
 <!-- readme: collaborators,contributors -start -->
 <table>
