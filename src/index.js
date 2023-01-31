@@ -8,3 +8,4 @@ export * from './lib/nameFormat.js';
 export * from './lib/toCamelFormat.js';
 export * from './lib/stripFormat.js';
 export * from './lib/truncateFormat.js';
+export * from './lib/bankCardFormat.js';

@@ -8,7 +8,8 @@ import {
   nameFormat,
   toCamelFormat,
   stripFormat,
-  truncateFormat
+  truncateFormat,
+  bankCardFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -58,5 +59,9 @@ describe('测试', () => {
     expect(truncateFormat('abcdefghigklmn', 6)).toBe('abcdef...');
     expect(truncateFormat('abcdefghigklmn', 100)).toBe('abcdefghigklmn');
     expect(truncateFormat('abcdefghigklmn', 6, '等等')).toBe('abcdef等等');
+  });
+
+  test('测试bankCardFormat', () => {
+    expect(bankCardFormat('6212268202014638888', 6)).toBe('6212 **** **** 8888');
   });
 });
