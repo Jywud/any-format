@@ -6,17 +6,25 @@
 
 ### 代码贡献规范
 
-请查看 README_dev.md 文件
+##### 请查看 README_dev.md 文件
 
 ### 安装
 
+##### 使用 npm
+
 ```javascript
 npm install any-format --save
+```
 
-or
+##### 使用 yarn
 
+```javascript
 yarn add any-format
 ```
+
+##### 浏览器 script 引入方式
+
+[下载链接](https://github.com/Jywud/any-format/tree/master/dist/anyFormat.min.js)
 
 ### 使用例子
 
