@@ -9,3 +9,5 @@ export * from './lib/toCamelFormat.js';
 export * from './lib/stripFormat.js';
 export * from './lib/truncateFormat.js';
 export * from './lib/bankCardFormat.js';
+export * from './lib/toLowerCaseFormat.js';
+export * from './lib/toUpperCaseFormat.js';

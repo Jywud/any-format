@@ -148,6 +148,24 @@ truncateFormat('abcdefghigklmn', 100); //'abcdefghigklmn'
 truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
 ```
 
+##### 字符串转大写
+
+```javascript
+//入参：字符串
+import { toUpperCaseFormat } from 'any-format';
+
+toUpperCaseFormat('abc123'); //'ABC123'
+```
+
+##### 字符串转小写
+
+```javascript
+//入参：字符串
+import { toLowerCaseFormat } from 'any-format';
+
+toLowerCaseFormat('ABC'); //'abc123'
+```
+
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->

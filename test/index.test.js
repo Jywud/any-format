@@ -9,7 +9,9 @@ import {
   toCamelFormat,
   stripFormat,
   truncateFormat,
-  bankCardFormat
+  bankCardFormat,
+  toUpperCaseFormat,
+  toLowerCaseFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -63,5 +65,13 @@ describe('测试', () => {
 
   test('测试bankCardFormat', () => {
     expect(bankCardFormat('6212268202014638888', 6)).toBe('6212 **** **** 8888');
+  });
+
+  test('测试toUpperCaseFormat', () => {
+    expect(toUpperCaseFormat('abc123', 6)).toBe('ABC123');
+  });
+
+  test('测试toLowerCaseFormat', () => {
+    expect(toLowerCaseFormat('ABC123', 6)).toBe('abc123');
   });
 });
