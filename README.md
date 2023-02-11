@@ -166,6 +166,16 @@ import { toLowerCaseFormat } from 'any-format';
 toLowerCaseFormat('ABC'); //'abc123'
 ```
 
+##### 驼峰格式转下划线
+
+```javascript
+//入参：驼峰字符串
+import { toLowerLineFormat } from 'any-format';
+
+toLowerLineFormat('isBetter'); //'is_better'
+toLowerLineFormat('IsBetter'); //'is_better'
+```
+
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->

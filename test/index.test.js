@@ -11,7 +11,8 @@ import {
   truncateFormat,
   bankCardFormat,
   toUpperCaseFormat,
-  toLowerCaseFormat
+  toLowerCaseFormat,
+  toLowerLineFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -73,5 +74,10 @@ describe('测试', () => {
 
   test('测试toLowerCaseFormat', () => {
     expect(toLowerCaseFormat('ABC123', 6)).toBe('abc123');
+  });
+
+  test('测试toLowerLineFormat', () => {
+    expect(toLowerLineFormat('isBetter', 6)).toBe('is_better');
+    expect(toLowerLineFormat('IsBetter', 6)).toBe('is_better');
   });
 });

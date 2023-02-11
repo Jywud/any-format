@@ -11,3 +11,4 @@ export * from './lib/truncateFormat.js';
 export * from './lib/bankCardFormat.js';
 export * from './lib/toLowerCaseFormat.js';
 export * from './lib/toUpperCaseFormat.js';
+export * from './lib/toLowerLineFormat.js';
