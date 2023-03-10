@@ -1,3 +1,4 @@
+export * from './lib/desensitizationFormat.js';
 export * from './lib/moneyFormat.js';
 export * from './lib/numberFormat.js';
 export * from './lib/phoneFormat.js';

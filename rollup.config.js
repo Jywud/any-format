@@ -1,8 +1,9 @@
+import { defineConfig } from 'rollup';
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser'; // 不用解构出来 有默认导出
 
-export default {
+export default defineConfig({
   input: 'src/index.js',
   output: [
     {
@@ -30,4 +31,4 @@ export default {
     babel({ babelHelpers: 'bundled' }),
     terser()
   ]
-};
+});

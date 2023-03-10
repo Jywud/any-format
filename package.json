@@ -1,6 +1,6 @@
 {
   "name": "any-format",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "用于数据格式化的工具库",
   "main": "dist/anyFormat.cjs.js",
   "module": "dist/anyFormat.esm.js",
@@ -8,7 +8,8 @@
   "keywords": [
     "any-format",
     "format",
-    "格式化"
+    "格式化",
+    "数据格式化展示"
   ],
   "files": [
     "src",

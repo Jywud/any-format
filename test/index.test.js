@@ -12,7 +12,8 @@ import {
   bankCardFormat,
   toUpperCaseFormat,
   toLowerCaseFormat,
-  toLowerLineFormat
+  toLowerLineFormat,
+  desensitizationFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -43,6 +44,12 @@ describe('测试', () => {
   test('测试nameFormat', () => {
     expect(nameFormat('王丫丫', 1)).toBe('王**');
     expect(nameFormat('王丫丫', 2, 1)).toBe('*丫丫');
+  });
+
+  test('测试desensitizationFormat', () => {
+    expect(desensitizationFormat('浙江省杭州市', 2, 1)).toBe('浙江***市');
+    expect(desensitizationFormat('浙江省杭州市', 2, 0)).toBe('浙江****');
+    expect(desensitizationFormat('浙江省杭州市', 0, 2)).toBe('****州市');
   });
 
   test('测试toCamelFormat', () => {

@@ -2,11 +2,11 @@
 
 ##### 用于前端常见的数据格式化，如手机号，金额，身份证号码等等
 
-#### 持续更新中！！！（Continuously update code！！！）
+##### 持续更新中（Continuously update code）
 
 ### 代码贡献规范
 
-##### 请查看 README_dev.md 文件
+##### 请查看 README_DEV.md 文件
 
 ### 安装
 
@@ -38,9 +38,20 @@ import * as anyFormat from 'any-format';
 anyFormat.moneyFormat(12000); //12,000.00
 ```
 
-### 全部函数实例
+### 全部功能示例
 
-##### 手机号脱敏格式化
+##### 通用脱敏
+
+```javascript
+//第一位：脱敏字符串 第二位：起始保留长度，从0开始 第三位：结束保留长度，到str.length结束
+import { desensitizationFormat } from 'any-format';
+
+desensitizationFormat('浙江省杭州市', 2, 1); //浙江***市
+desensitizationFormat('浙江省杭州市', 2, 0); //浙江****
+desensitizationFormat('浙江省杭州市', 0, 2); //****州市
+```
+
+##### 手机号脱敏
 
 ```javascript
 import { phoneFormat } from 'any-format';
@@ -48,7 +59,7 @@ import { phoneFormat } from 'any-format';
 phoneFormat('17611112222'); //176****2222
 ```
 
-##### 邮箱脱敏格式化
+##### 邮箱脱敏
 
 ```javascript
 import { emailFormat } from 'any-format';
@@ -56,7 +67,7 @@ import { emailFormat } from 'any-format';
 emailFormat('1234abcdefg@163.com'); //123****@163.com
 ```
 
-##### 身份证号码脱敏格式化
+##### 身份证号码脱敏
 
 ```javascript
 import { identityFormat } from 'any-format';
@@ -64,7 +75,7 @@ import { identityFormat } from 'any-format';
 identityFormat('330921199110253510'); //330***********3510
 ```
 
-##### 姓名脱敏格式化
+##### 姓名脱敏格
 
 ```javascript
 
@@ -78,7 +89,7 @@ nameFormat('王亚亚'， 1， 1) //**亚
 nameFormat('王亚亚'， 2， 1) //*亚亚
 ```
 
-##### 银行卡号脱敏格式化
+##### 银行卡号脱敏
 
 ```javascript
 import { bankCardFormat } from 'any-format';
@@ -120,9 +131,8 @@ dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'); //2023-01-03 12:12:12
 // 第一位：非驼峰字符串 第二位：非驼峰字符串间隔符
 import { toCamelFormat } from 'any-format';
 
-toCamelFormat('A_B_C'); //ABC
-toCamelFormat('a_b_c'); //aBC
-toCamelFormat('a-b-c', '-'); //aBC
+toCamelFormat('aa_bb_cc'); //aaBbCc
+toCamelFormat('aa-bb-cc', '-'); //aaBbCc
 ```
 
 ##### 去空白字符格式化
@@ -154,7 +164,7 @@ truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
 //入参：字符串
 import { toUpperCaseFormat } from 'any-format';
 
-toUpperCaseFormat('abc123'); //'ABC123'
+toUpperCaseFormat('world'); //'WORLD'
 ```
 
 ##### 字符串转小写
@@ -163,7 +173,7 @@ toUpperCaseFormat('abc123'); //'ABC123'
 //入参：字符串
 import { toLowerCaseFormat } from 'any-format';
 
-toLowerCaseFormat('ABC'); //'abc123'
+toLowerCaseFormat('WORLD'); //'world'
 ```
 
 ##### 驼峰格式转下划线
