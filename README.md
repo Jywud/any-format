@@ -1,30 +1,34 @@
-### any-format 介绍
+## any-format 介绍
 
-##### 用于前端常见的数据格式化，如手机号，金额，身份证号码等等
-
-##### 持续更新中（Continuously update code）
-
-### 代码贡献规范
-
-##### 请查看 README_DEV.md 文件
+用于前端常见的数据格式化，如手机号脱敏，金额格式化展示，字符串去除空白字符等
 
 ### 安装
 
+##### 浏览器环境
+
+[下载链接](https://github.com/Jywud/any-format/tree/master/dist/anyFormat.min.js) 拷贝压缩好的代码到本地的 js 文件引入
+
+```shell
+<script src="anyFormat.js"></script>
+```
+
 ##### 使用 npm
 
-```javascript
+```shell
 npm install any-format --save
 ```
 
 ##### 使用 yarn
 
-```javascript
+```shell
 yarn add any-format
 ```
 
-##### 浏览器 script 引入方式
+##### 使用 pnpm
 
-[下载链接](https://github.com/Jywud/any-format/tree/master/dist/anyFormat.min.js)
+```shell
+pnpm add any-format
+```
 
 ### 使用例子
 
@@ -40,10 +44,17 @@ anyFormat.moneyFormat(12000); //12,000.00
 
 ### 全部功能示例
 
-##### 通用脱敏
+#### desensitizationFormat - 通用脱敏
 
 ```javascript
-//第一位：脱敏字符串 第二位：起始保留长度，从0开始 第三位：结束保留长度，到str.length结束
+desensitizationFormat(param1, param2, param3);
+```
+
+`入参：param1(string)：原字符串  param2(number)：起始保留长度 param3(number)：结束保留长度，到String.length`
+
+例子
+
+```javascript
 import { desensitizationFormat } from 'any-format';
 
 desensitizationFormat('浙江省杭州市', 2, 1); //浙江***市
@@ -51,7 +62,15 @@ desensitizationFormat('浙江省杭州市', 2, 0); //浙江****
 desensitizationFormat('浙江省杭州市', 0, 2); //****州市
 ```
 
-##### 手机号脱敏
+#### phoneFormat- 手机号脱敏
+
+```javascript
+phoneFormat(param1);
+```
+
+`入参：param1(string)：手机号字符串`
+
+例子
 
 ```javascript
 import { phoneFormat } from 'any-format';
@@ -59,7 +78,15 @@ import { phoneFormat } from 'any-format';
 phoneFormat('17611112222'); //176****2222
 ```
 
-##### 邮箱脱敏
+#### emailFormat - 邮箱脱敏
+
+```javascript
+emailFormat(param1);
+```
+
+`入参：param1(string)：邮箱字符串`
+
+例子
 
 ```javascript
 import { emailFormat } from 'any-format';
@@ -67,7 +94,15 @@ import { emailFormat } from 'any-format';
 emailFormat('1234abcdefg@163.com'); //123****@163.com
 ```
 
-##### 身份证号码脱敏
+#### identityFormat - 身份证号码脱敏
+
+```javascript
+identityFormat(param1);
+```
+
+`入参：param1(string)：身份证号字符串`
+
+例子
 
 ```javascript
 import { identityFormat } from 'any-format';
@@ -75,21 +110,35 @@ import { identityFormat } from 'any-format';
 identityFormat('330921199110253510'); //330***********3510
 ```
 
-##### 姓名脱敏格
+#### nameFormat - 姓名脱敏
 
 ```javascript
-
-// 第一位：姓名， 第二位：明文展示的位数，其他变为*（默认为1）， 第三位：是否倒序隐藏（0：正序，1：倒序，默认为0）
-import { nameFormat } from 'any-format'
-
-nameFormat('王亚亚') //王**
-nameFormat('王亚亚'， 1) //王**
-nameFormat('王亚亚'， 2) //王亚*
-nameFormat('王亚亚'， 1， 1) //**亚
-nameFormat('王亚亚'， 2， 1) //*亚亚
+nameFormat(param1, param2, param3);
 ```
 
-##### 银行卡号脱敏
+`入参：param1(string)：姓名字符串 param2(number)：明文展示的长度，其他变为*（默认为1）param3(number)：是否倒序隐藏（0：正序，1：倒序，默认为0）`
+
+例子
+
+```javascript
+import { nameFormat } from 'any-format'
+
+nameFormat('王爱红') //王**
+nameFormat('王爱红'， 1) //王**
+nameFormat('王爱红'， 2) //王爱*
+nameFormat('王爱红'， 1， 1) //**红
+nameFormat('王爱红'， 2， 1) //*爱红
+```
+
+#### bankCardFormat - 银行卡号脱敏
+
+```javascript
+bankCardFormat(param1);
+```
+
+`入参：param1(string)：银行卡号字符串`
+
+例子
 
 ```javascript
 import { bankCardFormat } from 'any-format';
@@ -97,7 +146,15 @@ import { bankCardFormat } from 'any-format';
 bankCardFormat('6212268202014638888'); //'6212 **** **** 8888'
 ```
 
-##### 金额格式化
+#### moneyFormat - 金额格式化
+
+```javascript
+moneyFormat(param1, param2);
+```
+
+`入参：param1(string | number)：金额字符串或者数字 param2(string)：分隔符号（默认为,）`
+
+例子
 
 ```javascript
 import { moneyFormat } from 'any-format';
@@ -106,16 +163,53 @@ moneyFormat(12000); //12,000.00
 moneyFormat(12000, '~'); //12~000.00
 ```
 
-##### 数字格式化
+#### numberFormat - 数字格式化
+
+```javascript
+numberFormat(param1, param2);
+```
+
+`入参：param1(string | number)：原数据 param2(string)：分隔符号（默认为,）`
+
+例子
 
 ```javascript
 import { numberFormat } from 'any-format';
 
 numberFormat(10000); //10,000
-numberFormat(10000, 'a'); //10a000
+numberFormat(10000, '-'); //10-000
 ```
 
-##### 日期格式化
+#### bigNumberTransform - 大额数字格式化
+
+```javascript
+bigNumberTransform(param1);
+```
+
+`入参：param1(string | number)：大额数据`
+
+例子
+
+```javascript
+// 入参：数字值
+import { bigNumberTransform } from 'any-format';
+
+bigNumberTransform(100); //100
+bigNumberTransform(1000); //1千
+bigNumberTransform(10000); //1万
+bigNumberTransform(10000000); //1千万
+bigNumberTransform(100000000); //1亿
+```
+
+#### dateFormat - 日期格式化
+
+```javascript
+dateFormat(param1, param2);
+```
+
+`入参：param1(string | date)：日期字符串或者日期对象 param2(string)：格式化字符串（默认yyyy-MM-dd）`
+
+例子
 
 ```javascript
 import { dateFormat } from 'any-format';
@@ -125,20 +219,34 @@ dateFormat(new Date(), 'yyyy/MM/dd'); //2023/01/03
 dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'); //2023-01-03 12:12:12
 ```
 
-##### 转驼峰格式化
+#### toCamelFormat - 字符串转驼峰格式
 
 ```javascript
-// 第一位：非驼峰字符串 第二位：非驼峰字符串间隔符
+toCamelFormat(param1, param2);
+```
+
+`入参：param1(string)：非驼峰字符串 param2(string)：非驼峰字符串间隔符`
+
+例子
+
+```javascript
 import { toCamelFormat } from 'any-format';
 
 toCamelFormat('aa_bb_cc'); //aaBbCc
 toCamelFormat('aa-bb-cc', '-'); //aaBbCc
 ```
 
-##### 去空白字符格式化
+#### stripFormat - 去空白字符
 
 ```javascript
-//第一位：字符串  第二位：默认不传或者传all去除所有，trim：去首尾空格，head：去头部空格，tail：去尾部空格
+stripFormat(param1, param2);
+```
+
+`入参：param1(string)：原字符串 param2(string)：默认不传或者传all去除所有空格，trim：去首尾空格，head：去头部空格，tail：去尾部空格`
+
+例子
+
+```javascript
 import { stripFormat } from 'any-format';
 
 stripFormat('  abc df '); //'abcdf'
@@ -147,10 +255,17 @@ stripFormat('  abc df ', 'head'); //'abc df '
 stripFormat('  abc df ', 'tail'); //'  abc df'
 ```
 
-##### 字符串截断格式化
+#### truncateFormat - 字符串截断
 
 ```javascript
-//第一位：字符串  第二位：截断的长度(默认为10)，第三位：截断后拼接的后缀(默认是...)
+truncateFormat(param1, param2， param3);
+```
+
+`入参：param1(string)：原字符串 param2(number)：截断的长度(默认为10) param3(string)：截断后拼接的后缀(默认是...)`
+
+例子
+
+```javascript
 import { truncateFormat } from 'any-format';
 
 truncateFormat('abcdefghigklmn', 6); //'abcdef...'
@@ -158,28 +273,49 @@ truncateFormat('abcdefghigklmn', 100); //'abcdefghigklmn'
 truncateFormat('abcdefghigklmn', 6, '等等'); //'abcdef等等'
 ```
 
-##### 字符串转大写
+#### toUpperCaseFormat - 字符串转大写
 
 ```javascript
-//入参：字符串
+toUpperCaseFormat(param1);
+```
+
+`入参：param1(string)：原字符串`
+
+例子
+
+```javascript
 import { toUpperCaseFormat } from 'any-format';
 
 toUpperCaseFormat('world'); //'WORLD'
 ```
 
-##### 字符串转小写
+#### toLowerCaseFormat - 字符串转小写
 
 ```javascript
-//入参：字符串
+toLowerCaseFormat(param1);
+```
+
+`入参：param1(string)：原字符串`
+
+例子
+
+```javascript
 import { toLowerCaseFormat } from 'any-format';
 
 toLowerCaseFormat('WORLD'); //'world'
 ```
 
-##### 驼峰格式转下划线
+#### toLowerLineFormat - 驼峰格式转下划线
 
 ```javascript
-//入参：驼峰字符串
+toLowerLineFormat(param1);
+```
+
+`入参：param1(string)：原字符串`
+
+例子
+
+```javascript
 import { toLowerLineFormat } from 'any-format';
 
 toLowerLineFormat('isBetter'); //'is_better'

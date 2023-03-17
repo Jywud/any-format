@@ -13,7 +13,8 @@ import {
   toUpperCaseFormat,
   toLowerCaseFormat,
   toLowerLineFormat,
-  desensitizationFormat
+  desensitizationFormat,
+  bigNumberTransform
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -86,5 +87,12 @@ describe('测试', () => {
   test('测试toLowerLineFormat', () => {
     expect(toLowerLineFormat('isBetter', 6)).toBe('is_better');
     expect(toLowerLineFormat('IsBetter', 6)).toBe('is_better');
+  });
+
+  test('测试bigNumberTransform', () => {
+    expect(bigNumberTransform(100000000)).toBe('1亿');
+    expect(bigNumberTransform(100000)).toBe('10万');
+    expect(bigNumberTransform(1000)).toBe('1千');
+    expect(bigNumberTransform(100)).toBe('100');
   });
 });
