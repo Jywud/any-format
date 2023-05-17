@@ -14,7 +14,8 @@ import {
   toLowerCaseFormat,
   toLowerLineFormat,
   desensitizationFormat,
-  bigNumberTransform
+  bigNumberTransform,
+  noDataFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -94,5 +95,12 @@ describe('测试', () => {
     expect(bigNumberTransform(100000)).toBe('10万');
     expect(bigNumberTransform(1000)).toBe('1千');
     expect(bigNumberTransform(100)).toBe('100');
+  });
+  test('测试noDataFormat', () => {
+    expect(noDataFormat(null)).toBe('');
+    expect(noDataFormat('null')).toBe('');
+    expect(noDataFormat(undefined)).toBe('');
+    expect(noDataFormat('undefined')).toBe('');
+    expect(noDataFormat(undefined, '-')).toBe('-');
   });
 });

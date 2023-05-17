@@ -322,6 +322,27 @@ toLowerLineFormat('isBetter'); //'is_better'
 toLowerLineFormat('IsBetter'); //'is_better'
 ```
 
+#### noDataFormat - 空数据格式化
+
+```javascript
+noDataFormat(param1, param2);
+```
+
+`入参：param1(string)：原字符串 param2(string)：替换字符串（默认''）`
+
+例子
+
+```javascript
+import { noDataFormat } from 'any-format';
+
+noDataFormat(null); // '';
+noDataFormat('null'); // '';
+noDataFormat(undefined); // '';
+noDataFormat('undefined'); // '';
+noDataFormat(undefined, '-'); // '-';
+noDataFormat('abc'); // 'abc';
+```
+
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->
