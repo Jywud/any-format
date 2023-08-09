@@ -343,6 +343,23 @@ noDataFormat(undefined, '-'); // '-';
 noDataFormat('abc'); // 'abc';
 ```
 
+#### urlParmasFormat - 获取 url 的参数转为对象
+
+```javascript
+urlParmasFormat(param);
+```
+
+`入参：param(string)：字符串（默认window.location.search.slice(1)）`
+
+例子
+
+```javascript
+import { urlParmasFormat } from 'any-format';
+
+urlParmasFormat(); // 当前url的参数转为对象;
+urlParmasFormat('a=1&b=2'); // {a: '1', b: '2'}
+```
+
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->

@@ -15,7 +15,8 @@ import {
   toLowerLineFormat,
   desensitizationFormat,
   bigNumberTransform,
-  noDataFormat
+  noDataFormat,
+  urlParmasFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -102,5 +103,8 @@ describe('测试', () => {
     expect(noDataFormat(undefined)).toBe('');
     expect(noDataFormat('undefined')).toBe('');
     expect(noDataFormat(undefined, '-')).toBe('-');
+  });
+  test('测试urlParmasFormat', () => {
+    expect(urlParmasFormat('a=1&b=2')).toStrictEqual({ a: '1', b: '2' });
   });
 });
