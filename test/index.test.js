@@ -16,7 +16,8 @@ import {
   desensitizationFormat,
   bigNumberTransform,
   noDataFormat,
-  urlParmasFormat
+  urlParmasFormat,
+  compareVersion
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -106,5 +107,10 @@ describe('测试', () => {
   });
   test('测试urlParmasFormat', () => {
     expect(urlParmasFormat('a=1&b=2')).toStrictEqual({ a: '1', b: '2' });
+  });
+  test('测试compareVersion', () => {
+    expect(compareVersion('2.0.0', '1.2.0')).toBe(1);
+    expect(compareVersion('2.0.0', '2.2.0')).toBe(-1);
+    expect(compareVersion('2.0.1', '2.0.1')).toBe(0);
   });
 });

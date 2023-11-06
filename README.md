@@ -360,6 +360,26 @@ urlParmasFormat(); // 当前url的参数转为对象;
 urlParmasFormat('a=1&b=2'); // {a: '1', b: '2'}
 ```
 
+#### compareVersion - 版本号比较
+
+```javascript
+compareVersion(v1, v2);
+```
+
+`入参：v1(string)：2.0.0  v2(string)：2.1.0`
+
+例子
+
+```javascript
+import { compareVersion } from 'any-format';
+
+compareVersion('2.0.0', '2.0.0'); // 0
+compareVersion('2.0.0', '2.0'); // 0
+compareVersion('2.1.0', '2.0.0'); // 1
+compareVersion('2.0.1', '2.0.0'); // 1
+compareVersion('2.1.0', '3.0.0'); // -1
+```
+
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->
