@@ -17,3 +17,4 @@ export * from './lib/bigNumberTransform.js';
 export * from './lib/noDataFormat.js';
 export * from './lib/urlParmasFormat.js';
 export * from './lib/compareVersion.js';
+export * from './lib/timeAgoFormat.js';

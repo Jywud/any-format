@@ -380,6 +380,40 @@ compareVersion('2.0.1', '2.0.0'); // 1
 compareVersion('2.1.0', '3.0.0'); // -1
 ```
 
+#### timeAgoFormat - 时间间隔展示
+
+```javascript
+compareVersion(dateInput, format);
+```
+
+`入参：dateInput(Date/string)：new Date  format(string)：yyyy-MM-dd HH:mm:ss`
+
+例子
+
+```javascript
+import { timeAgoFormat } from 'any-format';
+
+const now = new Date();
+const dateInput = new Date(now.getTime() - 50 * 1000); // 50 seconds ago
+const result = timeAgoFormat(dateInput); // '刚刚'
+
+const now = new Date();
+const dateInput = new Date(now.getTime() - 30 * 60 * 1000); // 30 minutes ago
+const result = timeAgoFormat(dateInput); // 30分钟前
+
+const now = new Date();
+const dateInput = new Date(now.getTime() - 2 * 3600 * 1000); // 2 hours ago
+const result = timeAgoFormat(dateInput); // 2小时前
+
+const now = new Date();
+const dateInput = new Date(now.getTime() - 1 * 86400 * 1000); // 1 day ago
+const result = timeAgoFormat(dateInput); // 1天前
+
+// 大于3天展示具体的日期
+const dateInput = new Date(2023, 1, 15); // April 15, 2023 10:30:45
+const result = timeAgoFormat(dateInput, 'yyyy-MM-dd'); // '2023-02-15'
+```
+
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->

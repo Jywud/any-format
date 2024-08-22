@@ -17,7 +17,8 @@ import {
   bigNumberTransform,
   noDataFormat,
   urlParmasFormat,
-  compareVersion
+  compareVersion,
+  timeAgoFormat
 } from '../src/index.js';
 
 describe('测试', () => {
@@ -112,5 +113,41 @@ describe('测试', () => {
     expect(compareVersion('2.0.0', '1.2.0')).toBe(1);
     expect(compareVersion('2.0.0', '2.2.0')).toBe(-1);
     expect(compareVersion('2.0.1', '2.0.1')).toBe(0);
+  });
+  test('测试timeAgoFormat', () => {
+    {
+      const now = new Date();
+      const dateInput = new Date(now.getTime() - 50 * 1000); // 50 seconds ago
+      const result = timeAgoFormat(dateInput);
+      expect(result).toBe('刚刚');
+    }
+
+    {
+      const now = new Date();
+      const dateInput = new Date(now.getTime() - 30 * 60 * 1000); // 30 minutes ago
+      const result = timeAgoFormat(dateInput);
+      expect(result).toBe('30分钟前');
+    }
+
+    {
+      const now = new Date();
+      const dateInput = new Date(now.getTime() - 2 * 3600 * 1000); // 2 hours ago
+      const result = timeAgoFormat(dateInput);
+      expect(result).toBe('2小时前');
+    }
+
+    {
+      const now = new Date();
+      const dateInput = new Date(now.getTime() - 1 * 86400 * 1000); // 1 day ago
+      const result = timeAgoFormat(dateInput);
+      expect(result).toBe('1天前');
+    }
+
+    {
+      const dateInput = new Date(2023, 1, 15); // April 15, 2023 10:30:45
+      const result = timeAgoFormat(dateInput, 'yyyy-MM-dd');
+      const expected = '2023-02-15';
+      expect(result).toBe(expected);
+    }
   });
 });
